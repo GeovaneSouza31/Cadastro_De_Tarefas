@@ -1,4 +1,5 @@
 ﻿using Cadastro_De_Tarefas.Controller;
+using Cadastro_De_Tarefas.View;
 
 namespace Cadastro_De_Tarefas
 {
@@ -35,12 +36,18 @@ namespace Cadastro_De_Tarefas
             DateTime data = dateTimePicker1.Value;
             string status = comboBox1.Text.ToString();
 
-            
+
             controller.AdicionarTarefa(nome, data, status);
 
-            
+
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = controller.ObterTarefas();
+        }
+
+        private void cadastrarFuncionárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroDeFuncionariocs tela = new CadastroDeFuncionariocs();
+            tela.Show(); 
         }
     }
 }
